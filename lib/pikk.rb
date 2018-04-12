@@ -1,5 +1,5 @@
 require "pikk/version"
+require "pikk/main"
 
 module Pikk
-  # Your code goes here...
 end
