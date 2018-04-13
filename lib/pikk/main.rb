@@ -51,7 +51,7 @@ module Pikk
     end
 
     def to_table(list = [{}])
-      list.sort_by { |h| h[:weight] }.reverse!
+      list.sort_by! { |h| h[:weight] }.reverse!
 
       lsum = 0
 
