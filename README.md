@@ -23,7 +23,7 @@ Or install it yourself as:
   > **WARNING!**
   > **Your hash should have the keys `:name` and `:weight`!**
 
-There are two methods. One is `single_select` and the other is `pool`. Former, select one hash object from the array by its weight, and return it. Latter, do an iteration of selection, 50 by default, and return the array.
+There are two methods. One is `single_select` and the other is `pool`. Former, select one hash object from the array by its weight, and return it. Latter, do an iteration of selection, 50 by default, and return the array. See [examples/](https://github.com/aoozdemir/pikk/blob/master/examples/object_example.rb) for more.
 
 ```ruby
 require 'pikk'
