@@ -67,7 +67,6 @@ module Pikk
         add_row ['Iteration Count', { value: $iteration, colspan: 4, alignment: :right }]
         add_separator
         add_row ['Sum Ratio', { value: (1 - lsum / list.count).abs, colspan: 4, alignment: :right }]
-        align_column 1, :center
       end
 
       puts ltable
