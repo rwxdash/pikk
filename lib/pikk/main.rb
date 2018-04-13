@@ -53,22 +53,24 @@ module Pikk
     def to_table(list = [{}])
       list.sort_by { |h| h[:weight] }.reverse!
 
-      fsum = 0
+      lsum = 0
 
-      ftable = table do
+      ltable = table do
         self.headings = "Name", "Weight", "Count", "Probability", "(C/(P*I))"
 
         list.each do |f|
           add_row [f[:name], f[:weight], f[:count], f[:probability], (f[:count].to_f/(f[:probability] * $iteration))]
 
-          fsum += f[:count].to_f/(f[:probability] * $iteration)
+          lsum += f[:count].to_f/(f[:probability] * $iteration)
         end
         add_separator
-        add_row ['Total', { :value => (1 - fsum / list.count).abs, :colspan => 4, :alignment => :right }]
+        add_row ['Iteration Count', { value: $iteration, colspan: 4, alignment: :right }]
+        add_separator
+        add_row ['Sum Ratio', { value: (1 - lsum / list.count).abs, colspan: 4, alignment: :right }]
         align_column 1, :center
       end
 
-      puts ftable
+      puts ltable
     end
   end
 end
