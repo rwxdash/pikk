@@ -20,7 +20,42 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+  > **WARNING!**
+  > **Your hash should have the keys `:name` and `:weight`!**
+
+There are two methods. One is `single_select` and the other is `pool`. Former, select one hash object from the array by its weight, and return it. Latter, do an iteration of selection, 50 by default, and return the array.
+
+```ruby
+require 'pikk'
+
+ary = [{name: 'a', weight: 5.5}, {name: 'b', weight: 3}, {name: 'c', weight: 7}, {name: 'd', weight: 1.5}]
+
+Pikk.single_select(ary)
+# => {:name=>"c", :weight=>7, :count=>0, :probability=>0.4117647058823529}
+
+Pikk.pool(ary)
+# => [{:name=>"c", :weight=>7, :count=>22, :probability=>0.4117647058823529}, {:name=>"a", :weight=>5.5, :count=>15, :probability=>0.3235294117647059}, {:name=>"b", :weight=>3, :count=>8, :probability=>0.17647058823529413}, {:name=>"d", :weight=>1.5, :count=>5, :probability=>0.08823529411764706}]
+
+Pikk.pool(ary, iteration: 100)
+# => [{:name=>"c", :weight=>7, :count=>37, :probability=>0.4117647058823529}, {:name=>"a", :weight=>5.5, :count=>34, :probability=>0.3235294117647059}, {:name=>"b", :weight=>3, :count=>18, :probability=>0.17647058823529413}, {:name=>"d", :weight=>1.5, :count=>11, :probability=>0.08823529411764706}]
+
+Pikk.pool(ary, pp: true)
+# =>
+# +-----------------+--------+-------+---------------------+--------------------+
+# | Name            | Weight | Count | Probability         | (C/(P*I))          |
+# +-----------------+--------+-------+---------------------+--------------------+
+# | a               |  5.5   | 19    | 0.3235294117647059  | 1.1745454545454546 |
+# | b               |   3    | 8     | 0.17647058823529413 | 0.9066666666666666 |
+# | c               |   7    | 19    | 0.4117647058823529  | 0.9228571428571429 |
+# | d               |  1.5   | 4     | 0.08823529411764706 | 0.9066666666666666 |
+# +-----------------+--------+-------+---------------------+--------------------+
+# | Iteration Count |                                                        50 |
+# +-----------------+--------+-------+---------------------+--------------------+
+# | Sum Ratio       |                                       0.02231601731601729 |
+# +-----------------+--------+-------+---------------------+--------------------+
+```
+
+
 
 ## Development
 
