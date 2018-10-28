@@ -1,6 +1,6 @@
 # Pikk
 
-Generic Algorithm Pool Selection.
+Genetic Algorithm Pool Selection.
 
 ## Installation
 

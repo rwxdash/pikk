@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    pikk (0.1.0)
+    pikk (0.1.3)
       terminal-table
 
 GEM
@@ -24,7 +24,7 @@ GEM
     rspec-support (3.7.1)
     terminal-table (1.8.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
-    unicode-display_width (1.3.0)
+    unicode-display_width (1.4.0)
 
 PLATFORMS
   ruby
@@ -36,4 +36,4 @@ DEPENDENCIES
   rspec (~> 3.0)
 
 BUNDLED WITH
-   1.16.1
+   1.16.5

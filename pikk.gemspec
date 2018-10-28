@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Oguzhan Ozdemir"]
   spec.email         = ["aoozdemir@live.com"]
 
-  spec.summary       = %q{Generic Algorithm Pool Selection.}
-  spec.description   = %q{Generic Algorithm Pool Selection.}
+  spec.summary       = %q{Genetic Algorithm Pool Selection.}
+  spec.description   = %q{Genetic Algorithm Pool Selection.}
   spec.homepage      = "https://github.com/aoozdemir/pikk"
   spec.license       = "MIT"
 
